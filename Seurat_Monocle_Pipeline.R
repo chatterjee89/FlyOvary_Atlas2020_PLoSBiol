@@ -17,7 +17,7 @@ data_dir<-"~/cellranger_output/"
 ctrl.data<-Read10X(data.dir=data_dir)
 FC.control <- CreateSeuratObject(raw.data=ctrl.data, min.cells=3, min.genes=775, project="WT Repl1")
 
-mito.genes <- grep(pattern = "-m", x = rownames(x = FC.control@data), value = TRUE)
+mito.genes <- grep(pattern = "mt:", x = rownames(x = FC.control@data), value = TRUE)
 percent.mito <- Matrix::colSums(FC.control@raw.data[mito.genes, ])/Matrix::colSums(FC.control@raw.data)
 FC.control <- AddMetaData(object = FC.control, metadata = percent.mito, col.name = "percent.mito")
 VlnPlot(object = FC.control, features.plot = c("nGene", "nUMI", "percent.mito"), point.size.use = 0.8, nCol = 3)
