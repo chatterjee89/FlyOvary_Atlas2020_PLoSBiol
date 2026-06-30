@@ -1,4 +1,4 @@
-# 2020_scAtlas_Dmel_ovary
+# FlyOvary_Atlas2020_PLoSBiol
 
 Single-cell RNA-seq analysis pipeline for a *Drosophila melanogaster* ovary cell atlas. The script implements cell clustering with **Seurat 2.3.4** followed by pseudotime trajectory inference with **Monocle v2**.
 
